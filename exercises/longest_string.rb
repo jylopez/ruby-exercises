@@ -12,10 +12,18 @@
 #   str.length == 4
 
 def longest_string(list)
-  # This is your job. :)
+  ls = list.first
+  list.each do |q|
+  	if q.length > ls.length
+  		ls = q
+  	end
+  end
+  ls
 end
 
 if __FILE__ == $PROGRAM_NAME
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
+  animals = ["horse", "bear", "salmon", "frog", "cat"]
+  p longest_string(animals)
 end
