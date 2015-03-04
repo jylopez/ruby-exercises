@@ -4,10 +4,18 @@
 # Prints:      Nothing
 
 def shortest_string(list)
-  # This is your job. :)
+  ss = list.first
+  list.each do |q|
+  	if q.length < ss.length
+  		ss = q
+  	end
+  end
+  ss
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+  numbers = ["one", "two", "three", "four"]
+  p shortest_string(numbers)
+  numbers2 = ["two hundred", "two", "three thousand", "fifty"]
+  p shortest_string(numbers2)
 end
