@@ -26,8 +26,9 @@ end
 # to call the print_line method we've defined to help us print out a square.
 def print_square(dimension)
   (1..dimension).each do |i| # or, equivalently, for i in (1..dimension)
-    print_line(____)         # Fill in the blank, here.
+    print_line(dimension)         # Fill in the blank, here.
   end
+  return nil
 end
 
 # There are no rumble strips this time.  It's up to you to decide whether

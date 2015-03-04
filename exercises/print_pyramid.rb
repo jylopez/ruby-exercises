@@ -21,6 +21,10 @@
 require_relative "./print_triangle"
 
 def print_pyramid(height)
+	print_triangle(height)
+	(height-1).downto(1).each do |q|
+		print_line(q)
+	end
   # This is your job. :)
   # Suggestion: you can call print_triangle to print out the first, "upward"
   # half of the pyramid. You'll have to write code to print out the second,
@@ -28,6 +32,7 @@ def print_pyramid(height)
 end
 
 if __FILE__ == $PROGRAM_NAME
+	print_pyramid(4)
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
 end

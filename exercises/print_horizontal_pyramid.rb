@@ -11,9 +11,15 @@
 #  *****
 # *******
 
+
 def print_horizontal_pyramid(height)
+	(1..height).each do |q|
+		print " "*(height-q) + "*"*(q+q-1)
+		print "\n"
+	end
 end
 
 if __FILE__ == $PROGRAM_NAME
-  print_horizontal_pyramid(5)
+  print_horizontal_pyramid(20)
+
 end
