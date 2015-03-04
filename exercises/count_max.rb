@@ -16,6 +16,7 @@ require_relative "./max"
 require_relative "./count_in_list"
 
 def count_max(list)
+	count_in_list(list, max(list))
   # You can write this using nothing more than the max and count_in_list
   # methods that you've already written.  You do not HAVE to, but it's worth
   # trying. The "require_relative" statements above make them available to us.
@@ -27,4 +28,5 @@ end
 if __FILE__ == $PROGRAM_NAME
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
+  p count_max([10, 1, 2, 10, 3]) == 2
 end
