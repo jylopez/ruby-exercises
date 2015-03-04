@@ -48,6 +48,7 @@ if __FILE__ == $PROGRAM_NAME
   p max([-1]) == -1
   p max([11, 11, 11]) == 11
   p max([-22, -11, -22]) == -11
+  p "I just need to practice git more."
 end
 
 # Each of the lines above will print out "true" or "false" and collectively
