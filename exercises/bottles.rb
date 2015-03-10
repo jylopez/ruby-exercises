@@ -26,7 +26,21 @@
 #   no more bottles
 #   etc.
 
+def stanza(n)
+	if n > 1
+	puts "#{n} bottles of beer on the wall, #{n} bottles of beer."
+	puts "Take one down, pass it around, #{n-1} bottles of beer on the wall!"
+	else
+	puts "#{n} bottle of beer on the wall, #{n} bottles of beer."
+	puts "Take one down, pass it around, no more bottles of beer on the wall!"
+	end
+end
+
+
 def bottles(start_number)
+	start_number.downto(1) do |i|
+		stanza(i)
+	end
 end
 
 if __FILE__ == $PROGRAM_NAME

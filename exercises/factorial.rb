@@ -14,10 +14,25 @@
 #
 
 def factorial(n)
+	if n > 0
+		f = 1
+		n.downto(1) do |i|
+			f *= i
+		end
+		f
+	elsif n == 0
+		1
+	else
+		puts "Number must be a non-negative integer."
+		false
+	end
 end
 
 if __FILE__ == $PROGRAM_NAME
   # What are the common cases?  What are the corner cases?
   # Your sanity checks should look like
   #   p factorial(input) == ...expected return value...
+  puts factorial(0) == 1
+  puts factorial(1) == 1
+  puts factorial(5) == 120
 end

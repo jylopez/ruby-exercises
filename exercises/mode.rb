@@ -16,6 +16,17 @@
 # Break it down as clearly as you can in your own head first.
 
 def mode(array)
+  hist={}
+  array.each do |i|
+    if not hist.keys.include?(i)
+      hist[i] = 1
+    else
+      hist[i] += 1
+    end
+  end
+  max_val = hist.max_by{|k,v| v}
+  puts "[mode key, mode value] = #{max_val}"
+  max_val[0]
 end
 
 if __FILE__ == $PROGRAM_NAME

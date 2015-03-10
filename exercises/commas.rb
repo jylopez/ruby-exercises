@@ -20,12 +20,20 @@
 # insert the commas?  Which comma would you insert first?
 
 def commas(num)
+	if num.to_s.length > 3
+		num.to_s.reverse.gsub(/(\d{3})(?=\d)/,'\1,').reverse
+	else
+		num.to_s
+	end
 end
 
 if __FILE__ == $PROGRAM_NAME
   # What are the common cases?  What are the corner cases?
   # Your sanity checks should look like
   #   p commas(input) == ...expected return value...
+  puts commas(234534634) == '234,534,634'
+  puts commas(1231) == '1,231'
+  puts commas(23) == '23'
 end
 
 # Hint #1
