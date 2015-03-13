@@ -4,6 +4,7 @@
 # Prints:      Nothing
 
 require "open-uri"
+require "nokogiri"
 
 # Note #1
 # open-uri allows us to download the contents of any URL using the "open" method
@@ -20,6 +21,7 @@ def find_title(url)
   #   2. Use one of the methods described below to extract the
   #      contents of the title tag.
   #   3. Return the contents of the title tag.
+  t = Nokogiri::HTML(open(url)).title
 end
 
 if __FILE__ == $PROGRAM_NAME

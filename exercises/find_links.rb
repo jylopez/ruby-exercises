@@ -23,10 +23,30 @@ require "nokogiri"
 #   http://ruby.bastardsbook.com/chapters/html-parsing/
 #   http://lostechies.com/rodpaddock/2011/04/11/hacking-websites-with-ruby-and-nokogiri/
 
+require 'rubygems'
+
+
 def find_links(url)
   # This should return an array of all links at the given URL
+  page = Nokogiri::HTML(open(url))
+  links=page.css("a")
+  count = 1
+  llength = links.length
+  links.each do |l|
+  	puts "#{count}/#{llength}: " + l.text
+  	count += 1
+  end
 end
 
-find_links("http://www.cnn.com/").each do |url|
-  puts url
+
+
+# find_links("http://www.cnn.com/").each do |url|
+#   puts url
+# end
+
+if __FILE__ == $PROGRAM_NAME
+	find_links("http://mounthickory.com/")
+
 end
+
+

@@ -28,6 +28,22 @@
 # inputs.  Don't worry if it can't.
 
 def fib(n)
+  false
+  if n == 0
+    fn = 0
+  elsif n == 1
+    fn = 1
+  elsif n > 1
+    fn_old_old = 0
+    fn_old = 1
+    (2..n).each do |i|
+      fn = fn_old + fn_old_old
+      # puts "i=#{i}, fn00=#{fn_old_old}, fn0=#{fn_old}, fn=#{fn}"
+      fn_old_old = fn_old
+      fn_old = fn
+    end
+    fn
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -45,14 +61,14 @@ if __FILE__ == $PROGRAM_NAME
   # The 5th Fibonacci number is 5 and is the only one with this property, so
   # it serves as a good sanity check.
   p fib(5) == 5
-
+  p fib(9) ==34
   # This serves as a good input for the "common case"
   p fib(123) == 22698374052006863956975682
 
   # Want to see if your fibonacci method can handle big inputs?
   # Uncomment this:
   #
-  # puts "The 1,000,000th Fibonacci number is #{fib(1000000)}"
+  puts "The 1,000,000th Fibonacci number is #{fib(1000000)}"
   #
   # !!!WARNING!!!
   # This might grind your computer to a halt. If that happens, press CTRL+c.
